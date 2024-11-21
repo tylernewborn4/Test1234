@@ -1,6 +1,6 @@
 # Google Flight Price Scraper ✈️
 
-This repository contains a Python-based scraper designed to track and extract flight prices from Google Flights. By leveraging the power of Selenium and proxy rotation, the scraper automates the process of fetching flight details such as prices, departure times, and more, saving the data into a CSV file for easy analysis.
+This repository contains a Python-based scraper designed to track and extract flight prices from Google Flights. By leveraging the power of Playwright and proxy rotation, the scraper automates the process of fetching flight details such as prices, departure times, and more, saving the data into a CSV file for easy analysis.
 
 ## 📖 Tutorial Reference
 
