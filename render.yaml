@@ -2,5 +2,5 @@ services:
   - type: web
     name: flight-scraper
     env: docker
-    buildCommand: pip install -r requirements.txt && playwright install && playwright install-deps
-    startCommand: python main.py
+    buildCommand: docker build -t flight-scraper .
+    startCommand: docker run -p 8080:8080 flight-scraper
