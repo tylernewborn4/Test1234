@@ -41,7 +41,7 @@ class FlightURLBuilder:
 
 async def setup_browser():
     p = await async_playwright().start()
-    browser = await p.chromium.launch(headless=False)
+    browser = await p.chromium.launch(headless=True)
     page = await browser.new_page()
     return p, browser, page
 
