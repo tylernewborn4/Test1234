@@ -107,23 +107,19 @@ def save_to_csv(data: List[Dict[str, str]], filename: str = "flight_data.csv") -
 
 async def scrape_flight_data(one_way_url):
     flight_data = []
-
     playwright, browser, page = await setup_browser()
-    
     try:
         await page.goto(one_way_url)
-        
-        # Wait for flight data to load
         await page.wait_for_selector(".pIav2d")
-        
-        # Get all flights and extract their information
         flights = await page.query_selector_all(".pIav2d")
         for flight in flights:
             flight_info = await scrape_flight_info(flight)
             flight_data.append(flight_info)
-        
-        # Save the extracted data in CSV format
-        save_to_csv(flight_data)
+        return flight_data
+        print flight_data
+    finally:
+        await browser.close()
+        await playwright.stop()
             
     finally:
         await browser.close()
