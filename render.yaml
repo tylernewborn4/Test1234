@@ -1,6 +1,0 @@
-services:
-  - type: web
-    name: flight-scraper
-    env: docker
-    buildCommand: docker build -t flight-scraper .
-    startCommand: docker run -p 8080:8080 flight-scraper
